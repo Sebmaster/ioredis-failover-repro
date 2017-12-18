@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  node:
+    image: node:8-alpine
+    volumes:
+      - .:/app/
+    working_dir: /app
+  redis1:
+    image: redis:3-alpine
+    command: redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - 6381:6379
+    volumes:
+      - ./config/redis1.conf:/usr/local/etc/redis/redis.conf
+      - ./config/nodes1.conf:/usr/local/etc/redis/nodes.conf
+  redis2:
+    image: redis:3-alpine
+    command: redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - 6382:6379
+    volumes:
+      - ./config/redis2.conf:/usr/local/etc/redis/redis.conf
+      - ./config/nodes2.conf:/usr/local/etc/redis/nodes.conf
+  redis3:
+    image: redis:3-alpine
+    command: redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - 6383:6379
+    volumes:
+      - ./config/redis3.conf:/usr/local/etc/redis/redis.conf
+      - ./config/nodes3.conf:/usr/local/etc/redis/nodes.conf
+  redis4:
+    image: redis:3-alpine
+    command: redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - 6384:6379
+    volumes:
+      - ./config/redis4.conf:/usr/local/etc/redis/redis.conf
+      - ./config/nodes4.conf:/usr/local/etc/redis/nodes.conf
+  redis5:
+    image: redis:3-alpine
+    command: redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - 6385:6379
+    volumes:
+      - ./config/redis5.conf:/usr/local/etc/redis/redis.conf
+      - ./config/nodes5.conf:/usr/local/etc/redis/nodes.conf
+  redis6:
+    image: redis:3-alpine
+    command: redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - 6386:6379
+    volumes:
+      - ./config/redis6.conf:/usr/local/etc/redis/redis.conf
+      - ./config/nodes6.conf:/usr/local/etc/redis/nodes.conf
